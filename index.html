@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Phục vụ cho SEO Best Practices theo chuẩn yêu cầu -->
+    <title>Danh Mục Dự Án</title>
+    <meta name="description"
+        content="Khám phá các dự án công nghệ, phát triển web định hướng người dùng và giả lập thực tế ảo VR ứng dụng Unity Play.">
+
+    <!-- Link Font & Styles -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="lang-toggle" aria-label="Toggle Language">
+            <button class="lang-btn active" data-lang="en">EN</button>
+            <button class="lang-btn" data-lang="vi">VI</button>
+        </div>
+        <h1 class="title" data-i18n="header_title">Các Dự án của Thành An</h1>
+        <p class="subtitle" data-i18n="header_subtitle">Hiện thực hóa ý tưởng qua code.</p>
+    </header>
+
+    <main class="main-content">
+        <section id="portfolio" aria-labelledby="portfolio-title">
+            <h2 id="portfolio-title" class="projects-section-title">
+                <span aria-hidden="true"></span> <span data-i18n="projects_title">Các Dự Án</span>
+            </h2>
+
+            <!-- Unique ID theo yêu cầu SEO & Testing, dùng cho DOM manipulation -->
+            <div id="projects-container" class="projects-grid">
+                <!-- Khu vực hiển thị Loading Indicator (trước khi Fetch hoàn thành) -->
+                <div class="loader" data-i18n="loading">Đang đồng bộ cơ sở dữ liệu...</div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer" aria-label="Chân trang">
+        <p data-i18n="footer_text">© 2026 Le Van Thanh An. All rights reserved.</p>
+    </footer>
+
+    <!-- App Entry Point, dùng module ES6 cho Clean Architecture -->
+    <script type="module" src="./js/main.js"></script>
+</body>
+
+
+</html>

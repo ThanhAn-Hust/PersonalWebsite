@@ -1,0 +1,394 @@
+/* 
+ * CSS Styling cho Personal Website
+ * Áp dụng Modern Design: Dark Mode, Glassmorphism 
+ */
+
+:root {
+    /* Color Palette */
+    --color-bg: #09090b;
+    --color-surface: rgba(24, 24, 27, 0.65);
+    --color-border: rgba(255, 255, 255, 0.1);
+    
+    --color-text-main: #f4f4f5;
+    --color-text-muted: #a1a1aa;
+    
+    --color-brand: #3b82f6;
+    --color-brand-glow: rgba(59, 130, 246, 0.4);
+    
+    --color-vr: #8b5cf6;
+    --color-vr-glow: rgba(139, 92, 246, 0.3);
+    
+    --color-error: #ef4444;
+    --color-error-bg: rgba(239, 68, 68, 0.1);
+
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-full: 9999px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+    background-color: var(--color-bg);
+    color: var(--color-text-main);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* Typography & Layout */
+.header {
+    text-align: center;
+    padding: 5rem 2rem 3rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, var(--color-brand-glow) 0%, transparent 70%);
+    z-index: -1;
+    opacity: 0.5;
+}
+
+.title {
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    background: linear-gradient(135deg, #ffffff 0%, var(--color-text-muted) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 0.5rem;
+}
+
+.subtitle {
+    color: var(--color-text-muted);
+    font-size: 1.125rem;
+}
+
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem 5rem;
+}
+
+/* Projects Grid */
+.projects-section-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.projects-section-title::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, var(--color-border) 0%, transparent 100%);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 2rem;
+}
+
+/* Project Card (Glassmorphism) */
+.project-card {
+    background: var(--color-surface);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5), 0 0 20px 0 var(--color-vr-glow);
+}
+
+.card-image-wrapper {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.02);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.card-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.project-card:hover .card-image {
+    transform: scale(1.05); /* Khung hình phóng nhẹ cho cảm giác Premium */
+}
+
+.card-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    gap: 1rem;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1.4;
+}
+
+.badge {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+    border-radius: var(--radius-full);
+    white-space: nowrap;
+}
+
+.vr-badge {
+    background: rgba(139, 92, 246, 0.15);
+    color: #a78bfa;
+    border: 1px solid rgba(139, 92, 246, 0.3);
+}
+
+.card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-desc {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+    flex-grow: 1;
+}
+
+.vr-support-info {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 0.75rem;
+    border-radius: var(--radius-md);
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
+    margin-bottom: 1.5rem;
+    border: 1px dashed var(--color-border);
+}
+
+.vr-support-info strong {
+    color: #d8b4fe;
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.tech-tag {
+    font-size: 0.75rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.25rem 0.6rem;
+    border-radius: var(--radius-md);
+    border: 1px solid transparent;
+    transition: all 0.2s ease;
+}
+
+.project-card:hover .tech-tag {
+    border-color: var(--color-border);
+    color: var(--color-text-main);
+}
+
+/* Actions */
+.card-footer {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: auto;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.65rem 0.5rem;
+    border-radius: var(--radius-md);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: linear-gradient(to right, var(--color-brand), #2563eb);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 14px 0 var(--color-brand-glow);
+}
+
+.btn-primary:hover {
+    filter: brightness(1.1);
+    box-shadow: 0 6px 20px 0 var(--color-brand-glow);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--color-text-main);
+    border: 1px solid var(--color-border);
+}
+
+.btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.btn-icon {
+    font-size: 1.1rem;
+}
+
+/* States */
+.empty-state {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: var(--color-text-muted);
+    padding: 4rem 0;
+    font-style: italic;
+}
+
+.loader {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem 0;
+    color: var(--color-brand);
+    font-weight: 500;
+}
+
+.loader::after {
+    content: '';
+    width: 24px;
+    height: 24px;
+    border: 3px solid var(--color-brand-glow);
+    border-top-color: var(--color-brand);
+    border-radius: 50%;
+    margin-top: 1rem;
+    animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+    100% { transform: rotate(360deg); }
+}
+
+.error-container {
+    grid-column: 1 / -1;
+    background: var(--color-error-bg);
+    border: 1px solid rgba(239, 68, 68, 0.3);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.error-container h3 {
+    color: var(--color-error);
+    font-size: 1.25rem;
+}
+
+.error-details {
+    margin-top: 0.5rem;
+    font-family: ui-monospace, monospace;
+    font-size: 0.85rem;
+    color: var(--color-error);
+    opacity: 0.8;
+}
+
+.site-footer {
+    text-align: center;
+    color: var(--color-text-muted);
+    padding: 1.5rem 2rem 2rem;
+    font-size: 0.95rem;
+}
+
+/* Language Toggle */
+.lang-toggle {
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+    display: flex;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    backdrop-filter: blur(8px);
+}
+
+.lang-btn {
+    background: transparent;
+    color: var(--color-text-muted);
+    border: none;
+    padding: 0.5rem 1rem;
+    font-weight: 600;
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.lang-btn:hover {
+    color: var(--color-text-main);
+}
+
+.lang-btn.active {
+    background: var(--color-brand);
+    color: white;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .title {
+        font-size: 2.5rem;
+    }
+    
+    .card-footer {
+        flex-direction: column;
+    }
+}

@@ -1,0 +1,96 @@
+[
+  {
+    "id": 1,
+    "title": {
+      "en": "Personal Blog",
+      "vi": "Blog Cá Nhân"
+    },
+    "description": {
+      "en": "Personal website where I share my thoughts and stories.",
+      "vi": "Trang web cá nhân nơi tôi chia sẻ suy nghĩ và câu chuyện của bản thân."
+    },
+    "image_url": "https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "tech": [
+      "HTML5",
+      "CSS3",
+      "JavaScript (ES6+)"
+    ],
+    "github_url": "https://github.com/example/portfolio"
+  },
+  {
+    "id": 2,
+    "title": {
+      "en": "Multiplayer Framework for VR",
+      "vi": "Khung Đa người chơi cho VR"
+    },
+    "description": {
+      "en": "Framework that allows easy creation of VR multiplayer games, optimized for physics interactions and low latency.",
+      "vi": "Framework cho phép tạo game VR multiplayer dễ dàng, tối ưu hóa cho tương tác vật lý và độ trễ thấp."
+    },
+    "image_url": "https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "tech": [
+      "Unity",
+      "C#",
+      "Netcode for GameObjects",
+      "XR Interaction Toolkit"
+    ],
+    "vr_support_type": "Meta Quest 2, 3",
+    "github_url": "https://github.com/ThanhAn-Hust/MultiplayerFramework4VR.git"
+  },
+  {
+    "id": 3,
+    "title": {
+      "en": "SelfMOOC",
+      "vi": "SelfMOOC"
+    },
+    "description": {
+      "en": "MOOC system that helps students learn online.",
+      "vi": "Hệ thống MOOC giúp học sinh học tập trực tuyến"
+    },
+    "image_url": "https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "tech": [
+      "Next.js",
+      "TypeScript",
+      "MongoDB",
+      "PostgreSQL"
+    ],
+    "github_url": "https://github.com/ThanhAn-Hust/SelfMOOC.git",
+    "website_url": "https://selfmooc-deploy-iota.vercel.app/classes"
+  },
+  {
+    "id": 4,
+    "title": {
+      "en": "Fox Adventure Game",
+      "vi": "Game Fox Adventure"
+    },
+    "description": {
+      "en": "Fun Fox Adventure game.",
+      "vi": "Game Fox Adventure vui vẻ"
+    },
+    "image_url": "assets/images/Fox_Adventure.webp",
+    "tech": [
+      "Unity",
+      "C#"
+    ],
+    "unity_play_url": "https://play.unity.com/en/games/df747bac-a611-4ce6-9266-6603ed1d8702/fox-adventure",
+    "github_url": "https://github.com/ThanhAn-Hust/Fox_Adventure.git"
+  },
+  {
+    "id": 5,
+    "title": {
+      "en": "Flight n Meteor",
+      "vi": "Flight n Meteor"
+    },
+    "description": {
+      "en": "Obstacle dodging game.",
+      "vi": "Game né vật cản"
+    },
+    "image_url": "assets/images/content.webp",
+    "tech": [
+      "Unity",
+      "C#"
+    ],
+    "unity_play_url": "https://play.unity.com/en/games/ae805ebe-0f43-4f8b-ba08-a54675e56dbf/flight-and-meteor",
+    "github_url": "https://github.com/ThanhAn-Hust/Flight-n-Meteor.git"
+  }
+]
