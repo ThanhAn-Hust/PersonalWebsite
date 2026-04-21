@@ -7,8 +7,11 @@ export class I18nService {
     static dictionary = {
         en: {
             page_title: "Project Portfolio",
-            header_title: "Thanh An's Projects",
+            header_title: "Thanh An's Corner",
             header_subtitle: "Bringing ideas to life through code.",
+            about_title: "About Me",
+            about_desc: "Hello, I am Thanh An. A passionate developer exploring new technologies. I simply love bringing my ideas to life.",
+            social_connect: "Connect with me",
             projects_title: "Projects",
             loading: "Syncing database...",
             empty_state: "No projects updated yet.",
@@ -21,8 +24,11 @@ export class I18nService {
         },
         vi: {
             page_title: "Danh Mục Dự Án",
-            header_title: "Các Dự án của Thành An",
+            header_title: "Góc của Thành An",
             header_subtitle: "Hiện thực hóa ý tưởng qua code.",
+            about_title: "Giới thiệu",
+            about_desc: "Xin chào, tôi là Thành An. Một lập trình viên đam mê khám phá công nghệ. Tôi luôn có một niềm yêu thích to lớn trong việc biến các ý tưởng của mình thành thực tế.",
+            social_connect: "Kết nối với tôi",
             projects_title: "Các Dự Án",
             loading: "Đang đồng bộ cơ sở dữ liệu...",
             empty_state: "Hiện tại chưa có dự án nào được cập nhật.",

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3b82f6" /> <!-- Brand color -->
+      <stop offset="100%" stop-color="#8b5cf6" /> <!-- VR purple color -->
+    </linearGradient>
+  </defs>
+  
+  <!-- Nền hình vuông bo góc, màu tối (Dark Mode) -->
+  <rect width="100" height="100" rx="24" fill="#18181b" stroke="rgba(255,255,255,0.1)" stroke-width="2"/>
+  
+  <!-- Chữ A cách điệu -->
+  <path d="M 50 20 
+           L 20 80 L 38 80 L 44 62 
+           L 56 62 L 62 80 L 80 80 
+           Z 
+           M 47 50 
+           L 53 50 L 50 38 
+           Z" 
+        fill="url(#grad)"/>
+</svg>
