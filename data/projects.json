@@ -11,11 +11,11 @@
     },
     "image_url": "https://images.unsplash.com/photo-1547658719-da2b51169166?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
     "tech": [
-      "HTML5",
-      "CSS3",
-      "JavaScript (ES6+)"
+      "Next.js",
+      "Spring Boot",
+      "PostgreSQL"
     ],
-    "github_url": "https://github.com/example/portfolio"
+    "website_url": "https://blog.thanhanlv.cloud"
   },
   {
     "id": 2,
