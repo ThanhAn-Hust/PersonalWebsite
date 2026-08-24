@@ -56,30 +56,38 @@ export class ProjectUI {
         const card = document.createElement('div');
         card.className = 'project-card';
 
-        // Xác định UI tùy thuộc loại dự án (Web vs VR)
-        const isVR = !!project.unity_play_url;
-        const vrBadge = isVR ? `<span class="badge vr-badge">${I18nService.t('vr_project')}</span>` : '';
+        // Xác định UI tùy thuộc loại dự án (Game vs Web/Tool)
+        const isGame = !!project.unity_play_url || !!project.play_web_url || (project.tech && project.tech.some(t => t.toLowerCase().includes('unity')));
+        const badge = isGame ? `<span class="badge vr-badge">${I18nService.t('vr_project')}</span>` : '';
 
         let actionsHtml = '';
-        if (isVR) {
-            // Tích hợp External Linking ưu tiên cho Unity Play
-            actionsHtml = `
-                <a href="${project.unity_play_url}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                    <span class="btn-icon"></span> ${I18nService.t('vr_experience')}
+        if (project.play_web_url) {
+            actionsHtml += `
+                <a href="${project.play_web_url}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+                    <span class="btn-icon">🎮</span> ${I18nService.t('play_web')}
+                </a>`;
+        }
+
+        if (project.unity_play_url) {
+            const btnClass = project.play_web_url ? 'btn btn-secondary' : 'btn btn-primary';
+            const btnText = project.play_web_url ? I18nService.t('play_unity') : I18nService.t('vr_experience');
+            actionsHtml += `
+                <a href="${project.unity_play_url}" target="_blank" rel="noopener noreferrer" class="${btnClass}">
+                    <span class="btn-icon">🕹️</span> ${btnText}
                 </a>`;
         }
 
         if (project.website_url) {
             actionsHtml += `
                 <a href="${project.website_url}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
-                    <span class="btn-icon"></span> ${I18nService.t('visit_website')}
+                    <span class="btn-icon">🔗</span> ${I18nService.t('visit_website')}
                 </a>`;
         }
 
         if (project.github_url) {
             actionsHtml += `
                 <a href="${project.github_url}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
-                    <span class="btn-icon"></span> ${I18nService.t('source_code')}
+                    <span class="btn-icon">📂</span> ${I18nService.t('source_code')}
                 </a>`;
         }
 
@@ -104,7 +112,7 @@ export class ProjectUI {
             <div class="card-content">
                 <div class="card-header">
                     <h3 class="card-title">${title}</h3>
-                    ${vrBadge}
+                    ${badge}
                 </div>
                 <div class="card-body">
                     <p class="card-desc">${description}</p>

@@ -232,6 +232,7 @@ body {
 /* Actions */
 .card-footer {
     display: flex;
+    flex-wrap: wrap;
     gap: 0.75rem;
     margin-top: auto;
 }
@@ -241,7 +242,8 @@ body {
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    width: 100%;
+    flex: 1 1 calc(50% - 0.5rem);
+    min-width: 120px;
     padding: 0.65rem 0.5rem;
     border-radius: var(--radius-md);
     font-size: 0.85rem;
@@ -249,6 +251,8 @@ body {
     text-decoration: none;
     transition: all 0.2s ease;
     cursor: pointer;
+    text-align: center;
+    white-space: nowrap;
 }
 
 .btn-primary {
@@ -400,7 +404,9 @@ body {
 .social-links {
     display: flex;
     justify-content: center;
-    gap: 1.5rem;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.25rem;
 }
 
 .social-btn {
@@ -414,6 +420,7 @@ body {
     color: var(--color-text-muted);
     border: 1px solid var(--color-border);
     transition: all 0.3s ease;
+    text-decoration: none;
 }
 
 .social-btn:hover {
@@ -422,6 +429,15 @@ body {
     border-color: var(--color-brand);
     transform: translateY(-3px);
     box-shadow: 0 5px 15px var(--color-brand-glow);
+}
+
+.social-email-btn {
+    width: auto;
+    padding: 0 1.2rem;
+    border-radius: var(--radius-full);
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
 }
 
 /* Language Toggle */
