@@ -15,22 +15,22 @@
   {
     "id": 2,
     "title": {
-      "en": "Multiplayer Framework for VR",
-      "vi": "Khung Đa người chơi cho VR"
+      "en": "The Last Gatekeeper",
+      "vi": "The Last Gatekeeper (Người Gác Cổng Cuối Cùng)"
     },
     "description": {
-      "en": "Framework that allows easy creation of VR multiplayer games, optimized for physics interactions and low latency.",
-      "vi": "Framework cho phép tạo game VR multiplayer dễ dàng, tối ưu hóa cho tương tác vật lý và độ trễ thấp."
+      "en": "A 2D top-down action RPG featuring a time loop mechanic where power comes from knowledge and memories rather than stats.",
+      "vi": "Game nhập vai hành động 2D với cơ chế vòng lặp thời gian độc đáo, nơi sức mạnh đến từ tri thức và ký ức thay vì tăng chỉ số."
     },
-    "image_url": "https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "image_url": "assets/images/TheLastGatekeeper.png",
     "tech": [
-      "Unity",
+      "Unity 6 (URP 2D)",
       "C#",
-      "Netcode for GameObjects",
-      "XR Interaction Toolkit"
+      "Pixel Art",
+      "Procedural World"
     ],
-    "vr_support_type": "Meta Quest 2, 3",
-    "github_url": "https://github.com/ThanhAn-Hust/MultiplayerFramework4VR.git"
+    "play_web_url": "https://tlg.thanhanlv.cloud",
+    "unity_play_url": "https://play.unity.com/api/v1/games/game/ee2c9876-f6a4-4414-a746-94bfff04b84e/build/latest/frame"
   },
   {
     "id": 3,
@@ -55,6 +55,26 @@
   {
     "id": 4,
     "title": {
+      "en": "Multiplayer Framework for VR",
+      "vi": "Khung Đa người chơi cho VR"
+    },
+    "description": {
+      "en": "Framework that allows easy creation of VR multiplayer games, optimized for physics interactions and low latency.",
+      "vi": "Framework cho phép tạo game VR multiplayer dễ dàng, tối ưu hóa cho tương tác vật lý và độ trễ thấp."
+    },
+    "image_url": "https://images.unsplash.com/photo-1622979135225-d2ba269cf1ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
+    "tech": [
+      "Unity",
+      "C#",
+      "Netcode for GameObjects",
+      "XR Interaction Toolkit"
+    ],
+    "vr_support_type": "Meta Quest 2, 3",
+    "github_url": "https://github.com/ThanhAn-Hust/MultiplayerFramework4VR.git"
+  },
+  {
+    "id": 5,
+    "title": {
       "en": "Fox Adventure Game",
       "vi": "Game Fox Adventure"
     },
@@ -71,7 +91,7 @@
     "github_url": "https://github.com/ThanhAn-Hust/Fox_Adventure.git"
   },
   {
-    "id": 5,
+    "id": 6,
     "title": {
       "en": "Flight n Meteor",
       "vi": "Flight n Meteor"
@@ -87,25 +107,5 @@
     ],
     "unity_play_url": "https://play.unity.com/en/games/ae805ebe-0f43-4f8b-ba08-a54675e56dbf/flight-and-meteor",
     "github_url": "https://github.com/ThanhAn-Hust/Flight-n-Meteor.git"
-  },
-  {
-    "id": 6,
-    "title": {
-      "en": "The Last Gatekeeper",
-      "vi": "The Last Gatekeeper (Người Gác Cổng Cuối Cùng)"
-    },
-    "description": {
-      "en": "A 2D top-down action RPG featuring a time loop mechanic where power comes from knowledge and memories rather than stats.",
-      "vi": "Game nhập vai hành động 2D với cơ chế vòng lặp thời gian độc đáo, nơi sức mạnh đến từ tri thức và ký ức thay vì tăng chỉ số."
-    },
-    "image_url": "assets/images/TheLastGatekeeper.png",
-    "tech": [
-      "Unity 6 (URP 2D)",
-      "C#",
-      "Pixel Art",
-      "Procedural World"
-    ],
-    "play_web_url": "https://tlg.thanhanlv.cloud",
-    "unity_play_url": "https://play.unity.com/api/v1/games/game/ee2c9876-f6a4-4414-a746-94bfff04b84e/build/latest/frame"
   }
 ]
