@@ -438,6 +438,18 @@ body {
     gap: 0.5rem;
     font-size: 0.9rem;
     font-weight: 500;
+    font-family: inherit;
+    cursor: pointer;
+    outline: none;
+    user-select: none;
+}
+
+.social-email-btn.copied {
+    background: #10b981 !important;
+    border-color: #10b981 !important;
+    color: #ffffff !important;
+    box-shadow: 0 5px 15px rgba(16, 185, 129, 0.4) !important;
+    transform: scale(1.03);
 }
 
 /* Language Toggle */

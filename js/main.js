@@ -27,10 +27,54 @@ class AppController {
             // Thiết lập sự kiện cho nút ngôn ngữ
             this.setupLanguageToggle();
             
+            // Thiết lập tính năng copy email
+            this.setupEmailCopy();
+            
         } catch (error) {
             // Hiển thị lỗi nếu quá trình tải thất bại
             ProjectUI.renderError(error, container);
         }
+    }
+
+    static setupEmailCopy() {
+        const emailBtn = document.getElementById('email-copy-btn');
+        if (!emailBtn) return;
+
+        const emailText = 'thanhanlevan@gmail.com';
+        const textSpan = emailBtn.querySelector('.email-text');
+        let resetTimer = null;
+
+        emailBtn.addEventListener('click', async () => {
+            try {
+                if (navigator.clipboard && window.isSecureContext) {
+                    await navigator.clipboard.writeText(emailText);
+                } else {
+                    const tempInput = document.createElement('textarea');
+                    tempInput.value = emailText;
+                    tempInput.style.position = 'fixed';
+                    tempInput.style.opacity = '0';
+                    document.body.appendChild(tempInput);
+                    tempInput.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(tempInput);
+                }
+
+                emailBtn.classList.add('copied');
+                if (textSpan) {
+                    textSpan.textContent = I18nService.t('copied_text');
+                }
+
+                clearTimeout(resetTimer);
+                resetTimer = setTimeout(() => {
+                    emailBtn.classList.remove('copied');
+                    if (textSpan) {
+                        textSpan.textContent = emailText;
+                    }
+                }, 2000);
+            } catch (err) {
+                console.error('[AppController] Copy failed:', err);
+            }
+        });
     }
 
     static render() {

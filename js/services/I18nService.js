@@ -22,6 +22,7 @@ export class I18nService {
             visit_website: "Visit Website",
             source_code: "Source Code",
             vr_support: "VR Support:",
+            copied_text: "Copied!",
             footer_text: "© 2026 Le Van Thanh An. All rights reserved."
         },
         vi: {
@@ -41,6 +42,7 @@ export class I18nService {
             visit_website: "Xem Website",
             source_code: "Xem Mã Nguồn",
             vr_support: "Hỗ trợ VR:",
+            copied_text: "Đã sao chép!",
             footer_text: "© 2026 Lê Văn Thành An. All rights reserved."
         }
     };
