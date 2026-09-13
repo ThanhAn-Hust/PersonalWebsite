@@ -13,14 +13,26 @@ jobs:
     permissions:
       contents: read
       deployments: write
-    name: Deploy to Cloudflare Pages
+    name: Build & Deploy to Cloudflare Pages
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Build Next.js Static Export
+        run: npm run build
 
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy . --project-name=${{ vars.CLOUDFLARE_PROJECT_NAME || 'thanhanpersonalwebsite' }} --branch=${{ github.ref_name }}
+          command: pages deploy ./out --project-name=${{ vars.CLOUDFLARE_PROJECT_NAME || 'thanhanpersonalwebsite' }} --branch=${{ github.ref_name }}

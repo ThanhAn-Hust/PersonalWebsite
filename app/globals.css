@@ -1,0 +1,45 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+@import "lenis/dist/lenis.css";
+
+@theme inline {
+  --font-sans: var(--font-asap-sharp);
+  --font-heading: var(--font-humane);
+  --color-background: #ffffff;
+  --color-foreground: #171922;
+  --color-primary: #1a202c;
+  --color-border: rgb(23 25 34 / 12%);
+}
+
+@keyframes marquee-left {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-right {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes status-pulse {
+  from {
+    opacity: 0.6;
+    transform: scale(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(4);
+  }
+}
