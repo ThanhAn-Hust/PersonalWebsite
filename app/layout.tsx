@@ -25,6 +25,9 @@ const humane = localFont({
 export const metadata: Metadata = {
   title: { default: `${portfolio.name} — Creative Developer`, template: `%s — ${portfolio.name}` },
   description: "Design, development, and digital experiences. The portfolio of Le Van Thanh An, based in Hanoi, Vietnam.",
+  icons: {
+    icon: "/favicon.svg",
+  },
 }
 
 export default function RootLayout({

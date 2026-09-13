@@ -1,5 +1,6 @@
 "use client"
 
+import Image from "next/image"
 import { usePathname } from "next/navigation"
 import { TransitionLink } from "@/components/motion/page-transition"
 import { useLanguage } from "@/contexts/language-context"
@@ -19,11 +20,16 @@ export function SiteHeader() {
       <TransitionLink
         href={pathname === "/" ? "#top" : "/"}
         aria-label="Le Van Thanh An — home"
-        className="font-heading pointer-events-auto inline-flex flex-col text-[2.2rem] leading-[0.84] font-bold tracking-[0.035em] uppercase"
+        className="font-heading pointer-events-auto inline-flex items-center gap-3.5 text-[2.2rem] leading-[0.84] font-bold tracking-[0.035em] uppercase group"
         data-intro-logo
       >
-        <span>Le Van</span>
-        <span className="mt-[0.6rem] ml-[1.05rem]">Thanh An</span>
+        <div className="relative size-9 shrink-0 overflow-hidden rounded-xl border border-white/20 bg-[#18181b] transition-transform duration-300 group-hover:scale-105">
+          <Image src="/favicon.svg" alt="Logo" width={36} height={36} className="size-full object-cover" />
+        </div>
+        <div className="inline-flex flex-col">
+          <span>Le Van</span>
+          <span className="mt-[0.6rem] ml-[0.6rem]">Thanh An</span>
+        </div>
       </TransitionLink>
 
       <div className="pointer-events-auto flex items-center gap-[2rem] pt-[2.4rem]">
