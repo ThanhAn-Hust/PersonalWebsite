@@ -15,21 +15,23 @@ export function SiteHeader() {
   ]
 
   return (
-    <header className="pointer-events-none fixed top-0 left-0 z-40 flex h-40 w-full items-start justify-between px-[2.4rem] pt-8 text-white mix-blend-difference">
+    <header className="pointer-events-none fixed top-0 left-0 z-40 flex w-full items-start justify-between px-4 pt-4 sm:px-6 sm:pt-6 md:px-[2.4rem] md:pt-8 text-white mix-blend-difference">
       <TransitionLink
         href={pathname === "/" ? "#top" : "/"}
         aria-label="Le Van Thanh An — home"
-        className="font-heading pointer-events-auto inline-flex flex-col text-[2.2rem] leading-[0.84] font-bold tracking-[0.035em] uppercase"
+        className="font-heading pointer-events-auto inline-flex flex-col text-lg sm:text-xl md:text-[2.2rem] leading-[0.84] font-bold tracking-[0.035em] uppercase"
         data-intro-logo
       >
         <span>Le Van</span>
-        <span className="mt-[0.6rem] ml-[1.05rem]">Thanh An</span>
+        <span className="mt-[0.35rem] ml-1.5 sm:mt-[0.5rem] sm:ml-[0.8rem] md:mt-[0.6rem] md:ml-[1.05rem]">
+          Thanh An
+        </span>
       </TransitionLink>
 
-      <div className="pointer-events-auto flex items-center gap-[2rem] pt-[2.4rem]">
+      <div className="pointer-events-auto flex items-center gap-2 sm:gap-4 md:gap-[2rem] pt-1 sm:pt-2 md:pt-[2.4rem]">
         <nav
           aria-label="Primary navigation"
-          className="flex items-center gap-[1.3rem] text-[0.95rem] font-[320]"
+          className="flex items-center gap-2 sm:gap-3 md:gap-[1.3rem] text-xs sm:text-sm md:text-[0.95rem] font-[320]"
         >
           {navigation.map((item) => (
             <TransitionLink
@@ -43,11 +45,11 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <div className="flex items-center text-xs tracking-wider font-mono">
+        <div className="flex items-center text-[11px] sm:text-xs tracking-wider font-mono">
           <button
             type="button"
             onClick={() => setLanguage("en")}
-            className={`px-1.5 py-0.5 transition-opacity ${language === "en" ? "font-bold opacity-100 underline underline-offset-4" : "opacity-45 hover:opacity-80"}`}
+            className={`px-1.5 py-1 transition-opacity ${language === "en" ? "font-bold opacity-100 underline underline-offset-4" : "opacity-45 hover:opacity-80"}`}
             aria-label="Switch to English"
           >
             EN
@@ -56,7 +58,7 @@ export function SiteHeader() {
           <button
             type="button"
             onClick={() => setLanguage("vi")}
-            className={`px-1.5 py-0.5 transition-opacity ${language === "vi" ? "font-bold opacity-100 underline underline-offset-4" : "opacity-45 hover:opacity-80"}`}
+            className={`px-1.5 py-1 transition-opacity ${language === "vi" ? "font-bold opacity-100 underline underline-offset-4" : "opacity-45 hover:opacity-80"}`}
             aria-label="Chuyển sang Tiếng Việt"
           >
             VI
