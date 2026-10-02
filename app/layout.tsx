@@ -40,7 +40,7 @@ export default function RootLayout({
       lang="en"
       className={`${asapSharp.variable} ${humane.variable} scroll-auto bg-background`}
     >
-      <body className="m-0 min-w-80 overflow-x-clip bg-background font-sans text-foreground [text-rendering:optimizeLegibility] selection:bg-foreground selection:text-background">
+      <body className="m-0 min-w-[320px] max-w-full overflow-x-hidden bg-background font-sans text-foreground [text-rendering:optimizeLegibility] selection:bg-foreground selection:text-background">
         <LanguageProvider>
           <PageTransition>
             <SmoothScroll />
