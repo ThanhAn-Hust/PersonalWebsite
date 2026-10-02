@@ -28,8 +28,8 @@ export default async function ProjectPage({ params }: Props) {
 
   return (
     <>
-      <main id="top" tabIndex={-1} className="px-6 pb-24 outline-none md:px-10">
-        <div className="flex min-h-[92svh] flex-col justify-end pt-44 pb-12 md:pb-4 border-b border-border">
+      <main id="top" tabIndex={-1} className="px-4 sm:px-6 md:px-10 pb-16 md:pb-24 outline-none">
+        <div className="flex min-h-[50svh] sm:min-h-[70svh] md:min-h-[92svh] flex-col justify-end pt-28 sm:pt-36 md:pt-44 pb-8 md:pb-4 border-b border-border">
           <ProjectTitle key={project.slug} title={project.title} />
         </div>
         <ProjectInfo key={project.slug} project={project} />

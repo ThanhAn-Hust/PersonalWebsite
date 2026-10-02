@@ -26,9 +26,17 @@ export function ProjectTitle({ title }: { title: { en: string; vi: string } }) {
   }, [currentTitle, pageReady])
 
   return (
-    <h1 ref={root} aria-label={currentTitle} className="font-heading text-[clamp(5rem,13vw,15rem)] leading-[0.9] font-bold tracking-[0.005em] uppercase">
+    <h1 ref={root} aria-label={currentTitle} className="font-heading text-[clamp(2.25rem,10vw,15rem)] leading-[0.92] font-bold tracking-[0.005em] uppercase break-words">
       <span aria-hidden="true" className="flex flex-wrap gap-x-[0.18em]">
-        {currentTitle.split(" ").map((word, index) => <span key={index} className="inline-flex overflow-hidden pb-[0.08em]">{Array.from(word).map((letter, i) => <span key={i} data-letter className="inline-block">{letter}</span>)}</span>)}
+        {currentTitle.split(" ").map((word, index) => (
+          <span key={index} className="inline-flex overflow-hidden pb-[0.08em]">
+            {Array.from(word).map((letter, i) => (
+              <span key={i} data-letter className="inline-block">
+                {letter}
+              </span>
+            ))}
+          </span>
+        ))}
       </span>
     </h1>
   )
