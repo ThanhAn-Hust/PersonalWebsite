@@ -20,27 +20,27 @@ export function Services() {
     : "I’m a curious maker who enjoys both the visual and technical sides of a project. I like working closely with people, asking the right questions, and turning a shared idea into an experience that feels considered from start to finish."
 
   return (
-    <section aria-labelledby="services-title" className="overflow-hidden px-6 pb-40 md:px-10 md:pb-64">
-      <ScrollWords text={quote} className="max-w-[1450px] text-[clamp(1.8rem,3.3vw,4rem)] leading-[1.35] font-medium tracking-[-0.035em]" />
-      <Reveal className="mt-32 md:mt-48">
-        <h2 id="services-title" className="mb-12 text-sm uppercase">({t.services.heading})</h2>
+    <section aria-labelledby="services-title" className="overflow-hidden px-4 sm:px-6 md:px-10 pb-28 md:pb-64">
+      <ScrollWords text={quote} className="max-w-[1450px] text-[clamp(1.25rem,3vw,4rem)] leading-[1.35] font-medium tracking-[-0.035em] break-words" />
+      <Reveal className="mt-20 sm:mt-32 md:mt-48">
+        <h2 id="services-title" className="mb-8 sm:mb-12 text-xs sm:text-sm uppercase">({t.services.heading})</h2>
       </Reveal>
       {t.services.items.map((service, index) => {
         const open = active === index
         return (
           <Reveal key={service.title} className={index % 2 ? "text-right" : index === 2 ? "md:ml-[8%]" : ""}>
-            <Button variant="ghost" aria-expanded={open} aria-controls={`service-${index}`} onClick={() => setActive(open ? null : index)} className="group h-auto max-w-full justify-start gap-3 rounded-none px-0 py-4 text-[clamp(2rem,5.5vw,6.5rem)] leading-none font-extrabold tracking-[-0.035em] whitespace-normal uppercase hover:bg-transparent hover:text-primary/65 focus-visible:ring-2 focus-visible:ring-primary md:gap-6">
-              {service.title}
-              <span className="inline-flex items-center gap-1 font-light">(<Plus aria-hidden="true" className={`size-5! transition-transform duration-500 md:size-10! ${open ? "rotate-45" : ""}`} />)</span>
+            <Button variant="ghost" aria-expanded={open} aria-controls={`service-${index}`} onClick={() => setActive(open ? null : index)} className="group h-auto max-w-full justify-start gap-2.5 sm:gap-3 rounded-none px-0 py-3 sm:py-4 text-[clamp(1.75rem,5vw,6.5rem)] leading-none font-extrabold tracking-[-0.035em] whitespace-normal uppercase hover:bg-transparent hover:text-primary/65 focus-visible:ring-2 focus-visible:ring-primary md:gap-6 break-words text-left">
+              <span>{service.title}</span>
+              <span className="inline-flex items-center gap-1 font-light shrink-0">(<Plus aria-hidden="true" className={`size-4 sm:size-5 transition-transform duration-500 md:size-10! ${open ? "rotate-45" : ""}`} />)</span>
             </Button>
             <div id={`service-${index}`} inert={!open} onTransitionEnd={(event) => { if (event.propertyName === "grid-template-rows") ScrollTrigger.refresh() }} className={`grid transition-[grid-template-rows,opacity] duration-500 motion-reduce:transition-none ${open ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
-              <div className="overflow-hidden"><p className="pt-2 pb-7 text-sm leading-relaxed font-light md:text-xl">{service.desc}</p></div>
+              <div className="overflow-hidden"><p className="pt-2 pb-6 text-sm sm:text-base md:text-xl leading-relaxed font-light">{service.desc}</p></div>
             </div>
           </Reveal>
         )
       })}
-      <Reveal className="mt-20 ml-auto max-w-lg md:mt-28">
-        <p className="text-lg leading-relaxed font-light tracking-[-0.02em]">{outro}</p>
+      <Reveal className="mt-14 sm:mt-20 md:mt-28 ml-auto max-w-lg">
+        <p className="text-base sm:text-lg md:text-xl leading-relaxed font-light tracking-[-0.02em]">{outro}</p>
       </Reveal>
     </section>
   )
