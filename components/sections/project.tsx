@@ -9,11 +9,11 @@ export function Projects() {
   const { t } = useLanguage()
 
   return (
-    <section id="projects" aria-labelledby="projects-title" className="scroll-mt-20 px-6 md:px-10">
-      <div className="flex min-h-[75svh] flex-col items-center justify-center gap-8 py-32 text-center">
+    <section id="projects" aria-labelledby="projects-title" className="scroll-mt-20 px-4 sm:px-6 md:px-10">
+      <div className="flex min-h-[45svh] sm:min-h-[60svh] md:min-h-[75svh] flex-col items-center justify-center gap-6 sm:gap-8 py-16 sm:py-24 md:py-32 text-center">
         <Reveal>
-          <h2 id="projects-title" className="text-[clamp(3rem,6vw,7rem)] leading-none font-extrabold tracking-[-0.035em] uppercase">{t.projects.heading}</h2>
-          <p className="mt-8 text-xs tracking-wider text-foreground/55 uppercase">{t.projects.scrollPrompt}</p>
+          <h2 id="projects-title" className="text-[clamp(2.5rem,6vw,7rem)] leading-none font-extrabold tracking-[-0.035em] uppercase break-words">{t.projects.heading}</h2>
+          <p className="mt-6 sm:mt-8 text-xs tracking-wider text-foreground/55 uppercase">{t.projects.scrollPrompt}</p>
         </Reveal>
       </div>
       {projects.map((project, index) => <ProjectCard key={project.slug} project={project} index={index} />)}
