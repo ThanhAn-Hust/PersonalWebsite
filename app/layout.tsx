@@ -3,7 +3,7 @@ import localFont from "next/font/local"
 import { PageTransition } from "@/components/motion/page-transition"
 import { SmoothScroll } from "@/components/motion/smooth-scroll"
 import { SiteHeader } from "@/components/layout/site-header"
-import { portfolio } from "@/lib/portfolio"
+import { portfolio, siteUrl } from "@/lib/portfolio"
 
 import { LanguageProvider } from "@/contexts/language-context"
 import "./globals.css"
@@ -22,12 +22,59 @@ const humane = localFont({
   weight: "700",
 })
 
+const siteTitle = `${portfolio.nameVi} (${portfolio.name}) — ${portfolio.jobTitle}`
+const siteDescription =
+  "Portfolio của Lê Văn Thanh An (Le Van Thanh An) — Creative Developer tại Hà Nội. Web, game Unity, VR và trải nghiệm số tương tác. Design, development, and digital experiences."
+
 export const metadata: Metadata = {
-  title: { default: `${portfolio.name} — Creative Developer`, template: `%s — ${portfolio.name}` },
-  description: "Design, development, and digital experiences. The portfolio of Le Van Thanh An, based in Hanoi, Vietnam.",
+  metadataBase: new URL(siteUrl),
+  title: { default: siteTitle, template: `%s — ${portfolio.nameVi}` },
+  description: siteDescription,
+  applicationName: portfolio.nameVi,
+  authors: [{ name: portfolio.nameVi, url: siteUrl }],
+  creator: portfolio.nameVi,
+  keywords: [
+    "Lê Văn Thanh An",
+    "Le Van Thanh An",
+    "Thanh An",
+    "Creative Developer",
+    "Web Developer Hà Nội",
+    "Unity Game Developer",
+    "Portfolio",
+  ],
+  alternates: { canonical: "/" },
+  openGraph: {
+    type: "profile",
+    url: "/",
+    siteName: portfolio.nameVi,
+    title: siteTitle,
+    description: siteDescription,
+    locale: "vi_VN",
+    alternateLocale: ["en_US"],
+    firstName: "Thanh An",
+    lastName: "Lê Văn",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: siteTitle,
+    description: siteDescription,
+  },
+  robots: { index: true, follow: true },
   icons: {
     icon: "/favicon.svg",
   },
+}
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: portfolio.nameVi,
+  alternateName: [portfolio.name, "Thanh An"],
+  jobTitle: portfolio.jobTitle,
+  url: siteUrl,
+  email: `mailto:${portfolio.email}`,
+  address: { "@type": "PostalAddress", addressLocality: "Hà Nội", addressCountry: "VN" },
+  sameAs: Object.values(portfolio.socials),
 }
 
 export default function RootLayout({
@@ -41,6 +88,10 @@ export default function RootLayout({
       className={`${asapSharp.variable} ${humane.variable} scroll-auto bg-background`}
     >
       <body className="m-0 min-w-[320px] max-w-full overflow-x-hidden bg-background font-sans text-foreground [text-rendering:optimizeLegibility] selection:bg-foreground selection:text-background">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd).replace(/</g, "\\u003c") }}
+        />
         <LanguageProvider>
           <PageTransition>
             <SmoothScroll />

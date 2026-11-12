@@ -1,5 +1,9 @@
+export const siteUrl = "https://thanhanlv.cloud"
+
 export const portfolio = {
   name: "Le Van Thanh An",
+  nameVi: "Lê Văn Thanh An",
+  jobTitle: "Creative Developer",
   email: "thanhanlevan@gmail.com",
   location: "Hanoi, Vietnam",
   socials: {

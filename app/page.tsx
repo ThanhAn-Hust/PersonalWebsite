@@ -7,6 +7,9 @@ export default function Page() {
   return (
     <>
       <main id="top" tabIndex={-1} className="outline-none">
+        <h1 className="sr-only">
+          Lê Văn Thanh An (Le Van Thanh An) — Creative Developer, Hà Nội
+        </h1>
         <About />
         <Projects />
         <Services />
