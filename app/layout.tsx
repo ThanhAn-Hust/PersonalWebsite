@@ -24,7 +24,7 @@ const humane = localFont({
 
 const siteTitle = `${portfolio.nameVi} (${portfolio.name}) — ${portfolio.jobTitle}`
 const siteDescription =
-  "Portfolio của Lê Văn Thanh An (Le Van Thanh An) — Creative Developer tại Hà Nội. Web, game Unity, VR và trải nghiệm số tương tác. Design, development, and digital experiences."
+  "Portfolio của Lê Văn Thành An (Le Van Thanh An) — Creative Developer tại Hà Nội. Web, game Unity, VR và trải nghiệm số tương tác. Design, development, and digital experiences."
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -34,8 +34,9 @@ export const metadata: Metadata = {
   authors: [{ name: portfolio.nameVi, url: siteUrl }],
   creator: portfolio.nameVi,
   keywords: [
-    "Lê Văn Thanh An",
+    "Lê Văn Thành An",
     "Le Van Thanh An",
+    "Thành An",
     "Thanh An",
     "Creative Developer",
     "Web Developer Hà Nội",
@@ -51,7 +52,7 @@ export const metadata: Metadata = {
     description: siteDescription,
     locale: "vi_VN",
     alternateLocale: ["en_US"],
-    firstName: "Thanh An",
+    firstName: "Thành An",
     lastName: "Lê Văn",
   },
   twitter: {
@@ -69,7 +70,7 @@ const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: portfolio.nameVi,
-  alternateName: [portfolio.name, "Thanh An"],
+  alternateName: [portfolio.name, "Thành An", "Thanh An"],
   jobTitle: portfolio.jobTitle,
   url: siteUrl,
   email: `mailto:${portfolio.email}`,
