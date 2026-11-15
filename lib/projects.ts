@@ -47,7 +47,6 @@ export const projectData: ProjectData[] = [
     image_url: "/images/projects/TheLastGatekeeper.png",
     tech: ["Unity 6 (URP 2D)", "C#", "Pixel Art", "Procedural World"],
     play_web_url: "https://tlg.thanhanlv.cloud",
-    unity_play_url: "https://play.unity.com/en/games/ee2c9876-f6a4-4414-a746-94bfff04b84e/the-last-gatekeeper",
   },
   {
     id: 3,
